@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+}
+.main{
+    background-color: #23282b;
+    padding: 20px 30px;
+    height: 100% ;
+    box-sizing: border-box;
+}
+.carusel-main{
+    width: 100%;
+    overflow: hidden;
+}
+.carusel-image{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s;
+}
+.div1,.div2,.div3,.div4{
+    width: 100%;
+    height: 600px;
+    flex-shrink:0;
+}
+.text-and-ul{
+    display: flex;
+    justify-content: space-between;
+}
+.div1{
+    background: url("images/fourvsadnika.jpg") no-repeat;
+    background-position: center;
+}
+.div2{
+    background: url("images/millioner.jpg") no-repeat;
+    background-position: center;
+}
+.div3{
+    background: url("images/stiupid.jpg") no-repeat;
+    background-position: center;
+}
+.div4{
+    background: url("images/vesi.jpg") no-repeat;
+    background-position: center;
+}
+#slaid1:checked ~ .carusel-main > .carusel-image{
+    transform: translate(0);
+}
+#slaid2:checked ~ .carusel-main > .carusel-image{
+    transform: translateX(-100%);
+}
+#slaid3:checked ~ .carusel-main .carusel-image{
+    transform: translateX(-200%);
+}
+#slaid4:checked ~ .carusel-main .carusel-image{
+    transform: translateX(-300%);
+}
