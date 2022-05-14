@@ -1,55 +1,115 @@
 body{
     margin: 0;
 }
+p{
+    color: white;
+    font-weight: 600;
+    font-size: larger;
+}
 .main{
     background-color: #23282b;
     padding: 20px 30px;
-    height: 100% ;
+    height: 100vh ;
     box-sizing: border-box;
+    position: relative;
 }
 .carusel-main{
     width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 .carusel-image{
     display: flex;
     width: 100%;
+    height: 100%;
     transition: all 0.5s;
 }
-.div1,.div2,.div3,.div4{
+.group{
     width: 100%;
-    height: 600px;
+    height: 100%;
     flex-shrink:0;
-}
-.text-and-ul{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 .div1{
     background: url("images/fourvsadnika.jpg") no-repeat;
     background-position: center;
+    max-width: 100%;
+    height: 700px;
+    background-size: contain;
 }
 .div2{
     background: url("images/millioner.jpg") no-repeat;
     background-position: center;
+    width: 100%;
+    height: 700px;
+    background-size: contain;
 }
 .div3{
     background: url("images/stiupid.jpg") no-repeat;
     background-position: center;
+    width: 100%;
+    height: 700px;
+    background-size: contain;
 }
 .div4{
     background: url("images/vesi.jpg") no-repeat;
     background-position: center;
+    width: 100%;
+    height: 700px;
+    background-size: contain;
 }
-#slaid1:checked ~ .carusel-main > .carusel-image{
+#slaid1:checked~ .carusel-main{
     transform: translate(0);
 }
-#slaid2:checked ~ .carusel-main > .carusel-image{
+#slaid2:checked~.carusel-main .carusel-image{
     transform: translateX(-100%);
 }
-#slaid3:checked ~ .carusel-main .carusel-image{
+#slaid3:checked~.carusel-main .carusel-image{
     transform: translateX(-200%);
 }
-#slaid4:checked ~ .carusel-main .carusel-image{
+#slaid4:checked~.carusel-main .carusel-image{
     transform: translateX(-300%);
+}
+#slaid1:checked~.chekpoints label[for="slaid1"] .div{
+    background-color: rgb(44, 59, 118);;
+}
+#slaid2:checked~.chekpoints label[for="slaid2"] .div{
+    background-color: rgb(44, 59, 118);;
+}
+#slaid3:checked~.chekpoints label[for="slaid3"] .div{
+    background-color: rgb(44, 59, 118);;
+}
+#slaid4:checked~.chekpoints label[for="slaid4"] .div{
+    background-color: rgb(44, 59, 118);;
+}
+input{
+    display: none;
+}
+.chekpoints{
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+}
+.chekpoints > label{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chekpoints > label > div{
+    border: rgb(44, 59, 118) 2px solid;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+label:hover .div{
+    background-color: rgb(44, 59, 118);
+}
+label:hover{
+    cursor: pointer;
 }
